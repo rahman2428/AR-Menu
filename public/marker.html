@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AR Marker - Print This</title>
+  <style>
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      margin: 0;
+      background: #f0f0f0;
+      font-family: Arial, sans-serif;
+    }
+    .marker-container {
+      text-align: center;
+      padding: 2rem;
+      background: white;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+      border-radius: 10px;
+    }
+    .marker-image {
+      width: 300px;
+      height: 300px;
+      border: 2px solid #000;
+      margin: 1rem 0;
+    }
+    h1 {
+      color: #333;
+      margin-bottom: 1rem;
+    }
+    p {
+      color: #666;
+      line-height: 1.6;
+    }
+    @media print {
+      body {
+        background: white;
+      }
+      .marker-container {
+        box-shadow: none;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="marker-container">
+    <h1>AR Marker</h1>
+    <p>Print this page or display it on another device</p>
+    <p>Point your camera at this marker to see the AR food</p>
+    <img src="https://jeromeetienne.github.io/AR.js/data/images/HIRO.jpg" alt="Hiro Marker" class="marker-image">
+    <p><strong>Instructions:</strong></p>
+    <ul style="text-align: left; display: inline-block;">
+      <li>Print this marker or display on another screen</li>
+      <li>Place it on a flat surface (table)</li>
+      <li>Point your camera at the marker</li>
+      <li>The 3D food will appear on top of the marker</li>
+    </ul>
+  </div>
+</body>
+</html>
+
