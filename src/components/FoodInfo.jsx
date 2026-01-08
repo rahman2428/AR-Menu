@@ -17,7 +17,7 @@ function FoodInfo({ food, showInfo, onToggleInfo, currentIndex, totalItems, onPr
         <div className="food-details">
           <div className="detail-item">
             <span className="detail-label">💰 Price</span>
-            <span className="detail-value">${food.price}</span>
+            <span className="detail-value">₹{food.price}</span>
           </div>
           
           <div className="detail-item">

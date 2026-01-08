@@ -15,7 +15,8 @@
   top: 0;
   left: 0;
   z-index: 1;
-  transform: scaleX(-1); /* Mirror the camera feed */
+  transform: scaleX(-1);
+  /* Mirror the camera feed */
 }
 
 /* Model viewer wrapper - overlay layer */
@@ -214,6 +215,7 @@ model-viewer::part(default-ar-button):hover {
     opacity: 0;
     transform: translateX(-50%) translateY(-20px);
   }
+
   to {
     opacity: 1;
     transform: translateX(-50%) translateY(0);
@@ -227,4 +229,3 @@ model-viewer::part(default-ar-button):hover {
     font-size: 0.8rem;
   }
 }
-
