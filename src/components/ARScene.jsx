@@ -14,14 +14,14 @@ function ARScene({ foodItem, showInfo }) {
   useEffect(() => {
     const startCamera = async () => {
       try {
-        const stream = await navigator.mediaDevices.getUserMedia({
-          video: {
+        const stream = await navigator.mediaDevices.getUserMedia({ 
+          video: { 
             facingMode: 'environment', // Use back camera on mobile
             width: { ideal: 1280 },
             height: { ideal: 720 }
-          }
+          } 
         })
-
+        
         if (videoRef.current) {
           videoRef.current.srcObject = stream
           videoRef.current.play()
@@ -85,10 +85,10 @@ function ARScene({ foodItem, showInfo }) {
       modelViewer.setAttribute('environment-image', 'neutral')
       modelViewer.setAttribute('id', 'food-model-viewer')
       modelViewer.setAttribute('class', 'ar-model-viewer')
-
+      
       // Make AR button more prominent
       modelViewer.setAttribute('ar-button', '')
-
+      
       // Handle model load
       modelViewer.addEventListener('load', () => {
         setIsLoaded(true)
@@ -113,7 +113,7 @@ function ARScene({ foodItem, showInfo }) {
     const showFallbackMessage = () => {
       const modelContainer = containerRef.current.querySelector('.model-container')
       if (!modelContainer) return
-
+      
       const fallback = document.createElement('div')
       fallback.className = 'model-fallback'
       fallback.innerHTML = `
@@ -148,7 +148,7 @@ function ARScene({ foodItem, showInfo }) {
       const newScale = Math.max(0.5, Math.min(3.0, lastScale + delta))
       lastScale = newScale
       setScale(newScale)
-
+      
       const viewer = modelViewerRef.current
       if (viewer && !arMode) {
         try {
@@ -187,13 +187,13 @@ function ARScene({ foodItem, showInfo }) {
           touch2.clientX - touch1.clientX,
           touch2.clientY - touch1.clientY
         )
-
+        
         if (initialDistance > 0) {
           const scaleChange = (currentDistance - initialDistance) / 300
           const newScale = Math.max(0.5, Math.min(3.0, lastScale + scaleChange))
           lastScale = newScale
           setScale(newScale)
-
+          
           const viewer = modelViewerRef.current
           if (viewer) {
             try {
@@ -247,7 +247,7 @@ function ARScene({ foodItem, showInfo }) {
         playsInline
         muted
       />
-
+      
       {/* Model viewer overlay */}
       <div ref={containerRef} className="model-viewer-wrapper">
         <div className="model-container" />
@@ -263,7 +263,7 @@ function ARScene({ foodItem, showInfo }) {
         </div>
       )}
 
-
+       
     </div>
   )
 }

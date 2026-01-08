@@ -60,7 +60,7 @@ function App() {
 
   const onTouchEnd = () => {
     if (!touchStart || !touchEnd) return
-
+    
     const distance = touchStart - touchEnd
     const isLeftSwipe = distance > minSwipeDistance
     const isRightSwipe = distance < -minSwipeDistance
@@ -71,7 +71,7 @@ function App() {
     if (isRightSwipe && currentFoodIndex > 0) {
       setCurrentFoodIndex(prev => prev - 1)
     }
-
+    
     // Reset touch values
     setTouchStart(null)
     setTouchEnd(null)
@@ -93,17 +93,17 @@ function App() {
 
   return (
     <div className="app">
-      <ARScene
+      <ARScene 
         foodItem={currentFood}
         showInfo={showInfo}
       />
       {showInfo && (
-        <NavigationBar
+        <NavigationBar 
           selectedCategory={selectedCategory}
           onCategoryChange={setSelectedCategory}
         />
       )}
-      <FoodInfo
+      <FoodInfo 
         food={currentFood}
         showInfo={showInfo}
         onToggleInfo={() => setShowInfo(!showInfo)}
@@ -112,12 +112,12 @@ function App() {
         onPrev={() => currentFoodIndex > 0 && setCurrentFoodIndex(prev => prev - 1)}
         onNext={() => currentFoodIndex < filteredFood.length - 1 && setCurrentFoodIndex(prev => prev + 1)}
       />
-      <div
+      <div 
         className="swipe-area"
         onTouchStart={onTouchStart}
         onTouchMove={onTouchMove}
         onTouchEnd={onTouchEnd}
-        style={{
+        style={{ 
           pointerEvents: 'auto',
           touchAction: 'pan-y pinch-zoom'
         }}
