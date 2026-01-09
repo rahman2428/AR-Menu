@@ -16,7 +16,7 @@ export const foodData = [
     calories: 285,
     ingredients: ['Mozzarella', 'Tomato Sauce', 'Basil', 'Olive Oil', 'Dough'],
     // Example: Replace with your pizza.glb or pizza.gltf URL
-    modelUrl: './models/chicken_duck.glb' // Placeholder - replace with actual pizza model
+    modelUrl: 'models/chicken_duck.glb' // Placeholder - replace with actual pizza model
   },
   {
     id: 2,
